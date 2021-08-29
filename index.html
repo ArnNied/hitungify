@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/tailwind.css">
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <title>Hitungify</title>
+
+</head>
+
+<body class="bg-blue-700">
+    <!-- CONTAINER -->
+    <div class="flex flex-col">
+        <!-- HEADER -->
+        <div class="flex justify-center bg-blue-500 p-8">
+            <h2 class="text-4xl font-semibold text-white">Hitungify</h2>
+        </div>
+        <!-- MAIN BODY -->
+        <div class="flex flex-row p-4 space-x-2">
+            <!-- SEGITIGA -->
+            <div class="w-full lg:w-1/3 p-2 lg:p-4 bg-white p-4 rounded">
+                <div id="segitiga-container" class="flex flex-col divide-y-2 divide-blue-500">
+                    <!-- SEGITIGA HEADER -->
+                    <div class="flex flex-col p-2 space-y-4">
+                        <div class="flex w-full justify-center">
+                            <h2 class="font-semibold text-2xl">Segitiga</h2>
+                        </div>
+                        <!-- SEGITIGA IMAGE -->
+                        <div class="flex w-full justify-center">
+                            <svg width="234" height="201" viewBox="0 0 234 201" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.28273 198.5L117 5.00001L228.717 198.5H5.28273Z" fill="white" stroke="black"
+                                    stroke-width="5" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- SEGITIGA FORM -->
+                    <div class="flex flex-col p-2 space-y-2" id="segitiga-form">
+                        <div class="flex flex-row items-center">
+                            <label for="segitiga-tinggi" class="w-4/12">Tinggi:</label>
+                            <input type="number" id="segitiga-tinggi" class="w-full p-1 border border-blue-300"
+                                placeholder="Tinggi Segitiga">
+                        </div>
+                        <div class="flex flex-row items-center">
+                            <label for="segitiga-alas" class="w-4/12">Alas:</label>
+                            <input type="number" id="segitiga-alas" class="w-full p-1 border border-blue-300"
+                                placeholder="Alas Segitiga">
+                        </div>
+                        <div class="flex">
+                            <button class="w-full p-2 rounded bg-blue-500 font-semibold text-white"
+                                onclick="segitiga_hitung()">
+                                HITUNG
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SEGITIGA HASIL -->
+                    <div id="segitiga-hasil" class="flex flex-col p-2 space-y-2">
+                        <div class="flex w-full justify-center">
+                            <h2 class="font-semibold text-2xl">Hasil</h2>
+                        </div>
+                        <div class="flex flex-row items-center">
+                            <label for="segitiga-luas" class="w-4/12">Luas:</label>
+                            <input type="text" id="segitiga-luas" class="w-full p-1 border border-blue-300"
+                                placeholder="Luas Segitiga" disabled>
+                        </div>
+                        <div class="flex flex-row items-center">
+                            <label for="segitiga-keliling" class="w-4/12">Keliling:</label>
+                            <input type="text" id="segitiga-keliling" class="w-full p-1 border border-blue-300"
+                                placeholder="Keliling Segitiga" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- PERSEGI -->
+            <div class="w-full lg:w-1/3 p-2 lg:p-4 bg-white p-4 rounded">
+                <div id="persegi-container" class="flex flex-col divide-y-2 divide-blue-500">
+                    <!-- PERSEGI HEADER -->
+                    <div class="flex flex-col p-2 space-y-4">
+                        <div class="flex w-full justify-center">
+                            <h2 class="font-semibold text-2xl">Persegi</h2>
+                        </div>
+                        <!-- PERSEGI IMAGE -->
+                        <div class="flex w-full justify-center">
+                            <svg width="200" height="200" viewBox="0 0 200 200" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2.5" y="2.5" width="195" height="195" fill="white" stroke="black"
+                                    stroke-width="5" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- PERSEGI FORM -->
+                    <div class="flex flex-col p-2 space-y-2" id="persegi-persegi">
+                        <div class="flex flex-row items-center">
+                            <label for="persegi-sisi" class="w-4/12">Sisi:</label>
+                            <input type="number" id="persegi-sisi" class="w-full p-1 border border-blue-300"
+                                placeholder="Sisi Persegi">
+                        </div>
+                        <div class="flex">
+                            <button class="w-full p-2 rounded bg-blue-500 font-semibold text-white"
+                                onclick="persegi_hitung()">
+                                HITUNG
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PERSEGI HASIL -->
+                    <div class="flex flex-col p-2 space-y-2">
+                        <div class="flex w-full justify-center">
+                            <h2 class="font-semibold text-2xl">Hasil</h2>
+                        </div>
+                        <div class="flex flex-row items-center">
+                            <label for="persegi-luas" class="w-4/12">Luas:</label>
+                            <input type="number" id="persegi-luas" class="w-full p-1 border border-blue-300"
+                                placeholder="Luas Persegi" disabled>
+                        </div>
+                        <div class="flex flex-row items-center">
+                            <label for="persegi-keliling" class="w-4/12">Keliling:</label>
+                            <input type="number" id="persegi-keliling" class="w-full p-1 border border-blue-300"
+                                placeholder="Keliling Persegi" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- LINGKARAN -->
+            <div class="w-full lg:w-1/3 p-2 lg:p-4 bg-white p-4 rounded">
+                <div id="lingkaran-container" class="flex flex-col divide-y-2 divide-blue-500">
+                    <!-- LINGKARAN HEADER -->
+                    <div class="flex flex-col p-2 space-y-4">
+                        <div class="flex w-full justify-center">
+                            <h2 class="font-semibold text-2xl">Lingkaran</h2>
+                        </div>
+                        <!-- LINGKARAN IMAGE -->
+                        <div class="flex w-full justify-center">
+                            <svg width="200" height="200" viewBox="0 0 200 200" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="100" cy="100" r="97.5" fill="white" stroke="black" stroke-width="5" />
+                            </svg>
+
+                        </div>
+                    </div>
+
+                    <!-- LINGKARAN FORM -->
+                    <div class="flex flex-col p-2 space-y-2" id="lingkaran-form">
+                        <div class="flex flex-row items-center">
+                            <label for="lingkaran-jari-jari" class="w-4/12">Jari-jari:</label>
+                            <input type="number" id="lingkaran-jari-jari" class="w-full p-1 border border-blue-300"
+                                placeholder="Jari-jari Lingkaran">
+                        </div>
+                        <div class="flex">
+                            <button class="w-full p-2 rounded bg-blue-500 font-semibold text-white"
+                                onclick="return lingkaran_hitung()">
+                                HITUNG
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- LINGKARAN HASIL -->
+                    <div class="flex flex-col p-2 space-y-2">
+                        <div class="flex w-full justify-center">
+                            <h2 class="font-semibold text-2xl">Hasil</h2>
+                        </div>
+                        <div class="flex flex-row items-center">
+                            <label for="lingkaran-luas" class="w-4/12">Luas:</label>
+                            <input type="number" id="lingkaran-luas" class="w-full p-1 border border-blue-300"
+                                placeholder="Luas Lingkaran" disabled>
+                        </div>
+                        <div class="flex flex-row items-center">
+                            <label for="lingkaran-keliling" class="w-4/12">Keliling:</label>
+                            <input type="number" id="lingkaran-keliling" class="w-full p-1 border border-blue-300"
+                                placeholder="Keliling Lingkaran" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
