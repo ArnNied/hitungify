@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="css/tailwind.css">
     <script type="text/javascript" src="js/main.js"></script>
 
-    <title>Hitungify</title>
 
+    <title>Hitungify</title>
 </head>
 
 <body class="bg-blue-700">
@@ -17,8 +17,37 @@
     <div class="flex flex-col">
         <!-- HEADER -->
         <div class="flex justify-center bg-blue-500 p-8">
-            <h2 class="text-4xl font-semibold text-white">Hitungify</h2>
+            <h2 class="text-4xl font-bold text-white">Hitungify</h2>
         </div>
+
+        <!-- STATISTIK SECTION -->
+        <div class="flex flex-col px-4 py-2 lg:p-4 bg-white space-y-2 sm:space-y-0">
+            <div class="flex flex-row justify-center items-center space-x-2">
+                <h2 class="text-2xl font-semibold">STATISTIK</h2>
+                <button class="p-1 bg-red-500 hover:bg-red-600 font-semibold text-white rounded-sm" onclick="stats_reset()">
+                    HAPUS
+                </button>
+            </div>
+            <div class="flex flex-row justify-between sm:justify-center space-x-2">
+                <label for="">Total perhitungan anda:</label>
+                <p id="total-statistik">0</p>
+            </div>
+            <div class="flex flex-col sm:flex-row sm:justify-center sm:space-x-6">
+                <div class="flex flex-row justify-between sm:justify-center space-x-2">
+                    <label>Segitiga:</label>
+                    <p id="segitiga-statistik">0</p>
+                </div>
+                <div class="flex flex-row justify-between sm:justify-center space-x-2">
+                    <label>Persegi:</label>
+                    <p id="persegi-statistik">0</p>
+                </div>
+                <div class="flex flex-row justify-between sm:justify-center space-x-2">
+                    <label>Lingkaran:</label>
+                    <p id="lingkaran-statistik">0</p>
+                </div>
+            </div>
+        </div>
+
         <!-- MAIN BODY -->
         <div class="flex flex-col lg:flex-row p-2 lg:p-4 space-y-2 lg:space-x-2 lg:space-y-0">
             <!-- SEGITIGA -->
@@ -43,16 +72,19 @@
                     <div class="flex flex-col p-2 space-y-2" id="segitiga-form">
                         <div class="flex flex-row items-center">
                             <label for="segitiga-tinggi" class="w-4/12">Tinggi:</label>
-                            <input type="number" id="segitiga-tinggi" class="w-full p-1 border border-blue-300 focus:outline-none"
+                            <input type="number" id="segitiga-tinggi"
+                                class="w-full p-1 border border-blue-300 rounded-sm focus:outline-none"
                                 placeholder="Tinggi Segitiga">
                         </div>
                         <div class="flex flex-row items-center">
                             <label for="segitiga-alas" class="w-4/12">Alas:</label>
-                            <input type="number" id="segitiga-alas" class="w-full p-1 border border-blue-300 focus:outline-none"
+                            <input type="number" id="segitiga-alas"
+                                class="w-full p-1 border border-blue-300 rounded-sm focus:outline-none"
                                 placeholder="Alas Segitiga">
                         </div>
                         <div class="flex">
-                            <button type="submit" class="w-full p-2 rounded bg-blue-500 hover:bg-blue-600 font-semibold text-white focus:outline-none"
+                            <button type="submit"
+                                class="w-full p-2 rounded bg-blue-500 hover:bg-blue-600 font-semibold text-white focus:outline-none"
                                 onclick="segitiga_hitung()">
                                 HITUNG
                             </button>
@@ -66,12 +98,14 @@
                         </div>
                         <div class="flex flex-row items-center">
                             <label for="segitiga-luas" class="w-4/12">Luas:</label>
-                            <input type="text" id="segitiga-luas" class="w-full p-1 border border-blue-300 focus:outline-none"
+                            <input type="text" id="segitiga-luas"
+                                class="w-full p-1 border border-blue-300 rounded-sm focus:outline-none"
                                 placeholder="Luas Segitiga" disabled>
                         </div>
                         <div class="flex flex-row items-center">
                             <label for="segitiga-keliling" class="w-4/12">Keliling:</label>
-                            <input type="text" id="segitiga-keliling" class="w-full p-1 border border-blue-300 focus:outline-none"
+                            <input type="text" id="segitiga-keliling"
+                                class="w-full p-1 border border-blue-300 rounded-sm focus:outline-none"
                                 placeholder="Keliling Segitiga" disabled>
                         </div>
                     </div>
@@ -102,11 +136,13 @@
                     <div class="flex flex-col p-2 space-y-2" id="persegi-persegi">
                         <div class="flex flex-row items-center">
                             <label for="persegi-sisi" class="w-4/12">Sisi:</label>
-                            <input type="number" id="persegi-sisi" class="w-full p-1 border border-blue-300 focus:outline-none"
+                            <input type="number" id="persegi-sisi"
+                                class="w-full p-1 border border-blue-300 rounded-sm focus:outline-none"
                                 placeholder="Sisi Persegi">
                         </div>
                         <div class="flex">
-                            <button type="submit" class="w-full p-2 rounded bg-blue-500 hover:bg-blue-600 font-semibold text-white focus:outline-none"
+                            <button type="submit"
+                                class="w-full p-2 rounded bg-blue-500 hover:bg-blue-600 font-semibold text-white focus:outline-none"
                                 onclick="persegi_hitung()">
                                 HITUNG
                             </button>
@@ -120,12 +156,14 @@
                         </div>
                         <div class="flex flex-row items-center">
                             <label for="persegi-luas" class="w-4/12">Luas:</label>
-                            <input type="text" id="persegi-luas" class="w-full p-1 border border-blue-300 focus:outline-none"
+                            <input type="text" id="persegi-luas"
+                                class="w-full p-1 border border-blue-300 rounded-sm focus:outline-none"
                                 placeholder="Luas Persegi" disabled>
                         </div>
                         <div class="flex flex-row items-center">
                             <label for="persegi-keliling" class="w-4/12">Keliling:</label>
-                            <input type="text" id="persegi-keliling" class="w-full p-1 border border-blue-300 focus:outline-none"
+                            <input type="text" id="persegi-keliling"
+                                class="w-full p-1 border border-blue-300 rounded-sm focus:outline-none"
                                 placeholder="Keliling Persegi" disabled>
                         </div>
                     </div>
@@ -156,12 +194,14 @@
                     <div class="flex flex-col p-2 space-y-2" id="lingkaran-form">
                         <div class="flex flex-row items-center">
                             <label for="lingkaran-jari-jari" class="w-4/12">Jari-jari:</label>
-                            <input type="number" id="lingkaran-jari-jari" class="w-full p-1 border border-blue-300 focus:outline-none"
+                            <input type="number" id="lingkaran-jari-jari"
+                                class="w-full p-1 border border-blue-300 rounded-sm focus:outline-none"
                                 placeholder="Jari-jari Lingkaran">
                         </div>
                         <div class="flex">
-                            <button type="submit" class="w-full p-2 rounded bg-blue-500 hover:bg-blue-600 font-semibold text-white focus:outline-none"
-                                onclick="return lingkaran_hitung()">
+                            <button type="submit"
+                                class="w-full p-2 rounded bg-blue-500 hover:bg-blue-600 font-semibold text-white focus:outline-none"
+                                onclick="lingkaran_hitung()">
                                 HITUNG
                             </button>
                         </div>
@@ -174,12 +214,14 @@
                         </div>
                         <div class="flex flex-row items-center">
                             <label for="lingkaran-luas" class="w-4/12">Luas:</label>
-                            <input type="text" id="lingkaran-luas" class="w-full p-1 border border-blue-300 focus:outline-none"
+                            <input type="text" id="lingkaran-luas"
+                                class="w-full p-1 border border-blue-300 rounded-sm focus:outline-none"
                                 placeholder="Luas Lingkaran" disabled>
                         </div>
                         <div class="flex flex-row items-center">
                             <label for="lingkaran-keliling" class="w-4/12">Keliling:</label>
-                            <input type="text" id="lingkaran-keliling" class="w-full p-1 border border-blue-300 focus:outline-none"
+                            <input type="text" id="lingkaran-keliling"
+                                class="w-full p-1 border border-blue-300 rounded-sm focus:outline-none"
                                 placeholder="Keliling Lingkaran" disabled>
                         </div>
                     </div>
@@ -188,7 +230,9 @@
         </div>
     </div>
 
-
+    <script>
+        window.onload = stats_render();
+    </script>
 </body>
 
 </html>
